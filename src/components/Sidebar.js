@@ -2,7 +2,7 @@ import React from 'react';
 import books from '../data/books';
 
 
-const Sidebar = ({ bookDetails }) =>{
+const Sidebar = ({ setActive, getBook, active }) =>{
 
   function bookName(name){
     let parts = name?.split(' ');
@@ -20,7 +20,10 @@ const Sidebar = ({ bookDetails }) =>{
           <p className="pt-3">A curated list of every book ever written</p>
             <div className="mt-4">
               {books?.map((book, index )=> (
-                <div key={index} onClick={() => bookDetails(book)} className="mt-4 flex justify-between bg-secondaryBlue px-2 rounded-2xl h-56 items-center">
+                <div key={index} onClick={() => {
+                  setActive(index)
+                  getBook(book)
+                }} className="mt-4 flex justify-between px-2 rounded-2xl h-56 items-center" style={{ backgroundColor: `${index === active ? '#F8FAFD' : ''}`}}>
                 <div><span className="bg-primaryRed text-white text-16 font-bold rounded-full p-1">{bookName(book.book_name)}</span><span className="ml-1">{book.book_name}</span></div>
                 <div className="text-primaryGray">{book.book_category.length}</div>
               </div>

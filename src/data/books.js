@@ -15,7 +15,6 @@ const books = [
       {book_id: 4, book_subname: 'Romace4', year: 1995, book_author: 'Hofin Mafia', url: Img4,  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ducimus reiciendis soluta eos? Exercitationem aliquam enim velit beatae consequatur dolor sapiente dignissimos culpa nostrum cumque. Animi, nulla adipisci magni fugit, maxime perspiciatis dignissimos ad quasi nesciunt, officia mollitia autem debitis!'},
       {book_id: 5, book_subname: 'Romace5', year: 1995, book_author: 'Hofin Mafia', url: Img5,  description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ducimus reiciendis soluta eos? Exercitationem aliquam enim velit beatae consequatur dolor sapiente dignissimos culpa nostrum cumque. Animi, nulla adipisci magni fugit, maxime perspiciatis dignissimos ad quasi nesciunt, officia mollitia autem debitis!'},
     ],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ducimus reiciendis soluta eos? Exercitationem aliquam enim velit beatae consequatur dolor sapiente dignissimos culpa nostrum cumque. Animi, nulla adipisci magni fugit, maxime perspiciatis dignissimos ad quasi nesciunt, officia mollitia autem debitis!'
   },
   {
     id: 2,

@@ -5,23 +5,24 @@ import DetailBook from '../components/modal/DetailBook';
 import Sidebar  from '../components/Sidebar';
 
 const Home = () => {
-  const [ book, setBook ] = useState(0);
-  const [ bookInfo, setBookInfo ] = useState(false);
-  const [ data, setData ] = useState(false)
+  const [ bookDrawer, setBookDrawer ] = useState(false);
+  const [ bookDetails, setBookDetails ] = useState(false); 
+  const [active, setActive] = useState(0)
+  const [currentBook, setCurrentBook] = useState([])
 
-  const bookDetails = (data) => setBook(data);
+  const getBook = (book) => setCurrentBook(book)
 
   const toggleCard = (data) => {
-    setBookInfo((open) => !open)
-    setData(data)
+    setBookDrawer((open) => !open)
+    setBookDetails(data)
   };
 
   return(
     <React.Fragment>
-      { bookInfo && <DetailBook cancelModal={toggleCard} data={data} />}
-      <Header book={book} />
-      <Sidebar bookDetails={bookDetails} />
-      <Card book={book} toggleCard={toggleCard} />
+      { bookDrawer && <DetailBook cancelModal={toggleCard} bookDetails={bookDetails} />}
+      <Header currentBook={currentBook} active={active} />
+      <Sidebar setActive={setActive} getBook={getBook} active={active} />
+      {<Card active={active} toggleCard={toggleCard} /> }
     </React.Fragment>
   )
 }

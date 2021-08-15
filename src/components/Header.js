@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import books from '../data/books';
 import {ReactComponent as LogoIcon} from '../svgs/logo-svg.svg';
 import { ReactComponent as FilterIcon } from '../svgs/filter-svg.svg';
 import { ReactComponent as Arror } from '../svgs/arror-svg.svg';
@@ -6,8 +7,11 @@ import { FaSun } from 'react-icons/fa';
 import { BiSearch } from 'react-icons/bi';
 import FilterBook from './modal/FilterBook';
 
-const Header = ({book}) => {
-  // console.log(book.book_category.length)
+const Header = ({
+  currentBook, 
+  active
+}) => {
+
   const [ show, setShow ] = useState(false);
 
   const toggleFilter = () => setShow((open) => !open);
@@ -32,9 +36,9 @@ const Header = ({book}) => {
       <div className="flex justify-between bg-white shadow-sm h-56 w-full mt-20 fixed z-30 px-6 items-center cursor-pointer">
         <div className="flex justify-between items-center font-Rubik text-18">
           <div className="">Categories</div>
-          <div className="bg-secondaryBlue text-primaryBlue h-40 justify-center w-116 rounded-full text-14 ml-40 flex items-center">{!book.book_name ? 'N/A' : book.book_name}</div>
+          <div className="bg-secondaryBlue text-primaryBlue h-40 justify-center w-116 rounded-full text-14 ml-40 flex items-center">{!currentBook.book_name ? books[active].book_name : currentBook.book_name}</div>
           <div className="mx-5 flex items-center"><Arror /></div>
-          <div className="text-14 flex items-center font-Rubik text-primaryBlack">Showing {!book ? '0' : book.book_category.length} Result(s)</div>
+          <div className="text-14 flex items-center font-Rubik text-primaryBlack">Showing {!currentBook.book_category ? books[active].book_category.length : currentBook.book_category.length} Result(s)</div>
         </div>
         <button onClick={toggleFilter} className="bg-secondaryBlue w-116 h-45 my-2 flex items-center justify-center rounded-full">
           <span className="mr-2"><FilterIcon /></span>
