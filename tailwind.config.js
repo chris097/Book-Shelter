@@ -10,6 +10,7 @@ module.exports = {
         primaryRed: '#FF6231',
         primaryGray: '#58667E',
         lowGray: '#757881',
+        xGray: '#A6B0C3',
         secondaryBlue: '#F8FAFD',
         lowBlue: '#B8B9BE',
       },
@@ -24,6 +25,7 @@ module.exports = {
         260: '260px',
         268: '268px',
         282: '282px',
+        353: '353px',
         369: '369px',
         400: '400px',
         480: '480px',
@@ -38,7 +40,10 @@ module.exports = {
         56: '56px',
         60: '60px',
         120: '120px',
+        144: '144px',
         150: '150px',
+        178: '178px',
+        213: '213px',
         238: '238px',
         331: '331px',
         369: '369px',
@@ -56,6 +61,9 @@ module.exports = {
       fontFamily: {
         DanScript: ['Dancing Script', 'cursive'],
         Rubik: ['Rubik', 'sans-serif']
+      },
+      fontWeight:{
+        500: '500'
       },
     },
   },

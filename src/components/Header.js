@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import books from '../data/books';
 import {ReactComponent as LogoIcon} from '../svgs/logo-svg.svg';
 import { ReactComponent as FilterIcon } from '../svgs/filter-svg.svg';
 import { ReactComponent as Arror } from '../svgs/arror-svg.svg';
 import { FaSun } from 'react-icons/fa';
 import { BiSearch } from 'react-icons/bi';
-import FilterBook from './modal/FilterBook';
 
 const Header = ({
   currentBook, 
-  active
+  active,
+  toggleFilter
 }) => {
-
-  const [ show, setShow ] = useState(false);
-
-  const toggleFilter = () => setShow((open) => !open);
 
   return (
     <>
@@ -45,7 +41,6 @@ const Header = ({
           <span className="text-14 font-Rubik">Filter</span>
         </button>
       </div>
-      { show && <FilterBook />}
     </>
   )
 }

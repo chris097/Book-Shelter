@@ -1,15 +1,15 @@
 import React from 'react';
-import books from '../data/books';
+import books from '../../data/books';
 // import { ReactComponent as Image } from '../svgs/image1-svg.svg';
 
-export const Card = ({
+const GridCard = ({
   active, 
   toggleCard
 }) => {
   return (
     <>
       <div className="pt-36 m-lf relative flex flex-wrap mb-10">
-          { books[active].book_category?.map((book, index) => (
+          { !books ? 'No Data Found...' : books[active].book_category?.map((book, index) => (
             <div key={index} onClick={() => toggleCard(book)} className="w-282 h-369 bg-white rounded-lg mr-6 mt-5">
               <div className="w-249 h-238 bg-secondaryBlue mx-auto mt-4 flex justify-center items-center rounded-lg">
                 {!book ? <div className=" text-36">?</div> : <img src={book.url} alt="img" />}
@@ -25,3 +25,5 @@ export const Card = ({
     </>
   )
 }
+
+export default GridCard;
